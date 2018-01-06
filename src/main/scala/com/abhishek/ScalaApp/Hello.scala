@@ -1,4 +1,4 @@
-package example
+package com.abhishek.ScalaApp
 
 object Hello extends Greeting with App {
   println(greeting)
