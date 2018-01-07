@@ -1,16 +1,16 @@
 package com.abhishek.ScalaApp
 
-class Point(val xc: Int, val yc: Int) {
+class Point(val xc: Int, val yc: Int) extends Equal {
   var x: Int = xc
   var y: Int = yc
 
   def move(dx: Int, dy: Int): Unit = {
     x = x + dx
     y = y + dy
-    println("Point x location : " + x);
-    println("Point y location : " + y);
   }
-
+  
+  def isEqual(obj: Any) = obj.isInstanceOf[Point] && obj.asInstanceOf[Point].x == y
+  
 }
 
 class Demo {
@@ -48,6 +48,9 @@ object Hello {
     val pt = new Point(10, 20)
     // Move to a new location
     pt.move(5, 9)
+    
+    //trait example
+    println("Is Point fields equals " + pt.isEqual(pt))
 
     val demo = new Demo();
     demo.printArray();

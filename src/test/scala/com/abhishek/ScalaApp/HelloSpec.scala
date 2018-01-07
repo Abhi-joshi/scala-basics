@@ -27,4 +27,10 @@ class HelloSpec extends FlatSpec with Matchers {
     val total = demo.sumOfTuple()
     total shouldEqual (8)
   }
+  "Equality of Point x and Point y" should "return true" in {
+    val pt = new Point(10, 20)
+    pt.move(19, 9)
+    val isEqual: Boolean = pt.isEqual(pt)
+    isEqual shouldEqual (true)
+  }
 }
