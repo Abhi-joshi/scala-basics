@@ -19,7 +19,12 @@ class HelloSpec extends FlatSpec with Matchers {
   }
   "Sum of array" should "return 6" in {
     val demo = new Demo()
-    val total = demo.sumArray();
+    val total = demo.sumArray()
     total shouldEqual (6)
+  }
+  "Sum of tuple" should "return 8" in {
+    val demo = new Demo()
+    val total = demo.sumOfTuple()
+    total shouldEqual (8)
   }
 }

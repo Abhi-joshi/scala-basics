@@ -17,6 +17,7 @@ class Demo {
   var myArray = Array(1, 2, 3)
   var total = 0
   var factor: Int = 3
+  var tuple = Tuple3(1,3,4)
   
   val multiplier = (i: Int) => i * factor
 
@@ -31,6 +32,10 @@ class Demo {
       total += i
     }
     total
+  }
+  
+  def sumOfTuple(): Int = {
+    tuple._1 + tuple._2 + tuple._3
   }
 
 }
@@ -48,6 +53,7 @@ object Hello {
     demo.printArray();
     println("Sum of array is " + demo.sumArray())
     println("Result of multiplication is " +  demo.multiplier(8))
+    println("Sum of tuple is " +  demo.sumOfTuple())
     
     //Collection examples
     val collectionExample = new CollectionExample();
