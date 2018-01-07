@@ -5,7 +5,7 @@ import org.scalatest._
 class CollectionExampleSpec extends FlatSpec with Matchers {
   val collectionExample = new CollectionExample()
 
-  "The last element of fruit list" should "return pears" in {
+  "The last element in fruit list" should "return pears" in {
     val lastElement: String = collectionExample.lastElementInList()
     lastElement shouldEqual ("pears")
   }
