@@ -48,5 +48,11 @@ object Hello {
     demo.printArray();
     println("Sum of array is " + demo.sumArray())
     println("Result of multiplication is " +  demo.multiplier(8))
+    
+    //Collection examples
+    val collectionExample = new CollectionExample();
+    collectionExample.listOperations();
+    collectionExample.setOperations();
+    collectionExample.mapOperations();
   }
 }
