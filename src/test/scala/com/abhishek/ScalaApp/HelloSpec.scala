@@ -13,8 +13,8 @@ class HelloSpec extends FlatSpec with Matchers {
     pt.y shouldEqual (29)
   }
   "The Multiplier closure" should "return 24" in {
-    val pt = new Point(10, 20)
-    val mulValue: Int = pt.multiplier(8)
+    val demo = new Demo()
+    val mulValue: Int = demo.multiplier(8)
     mulValue shouldEqual (24)
   }
   "Sum of array" should "return 6" in {

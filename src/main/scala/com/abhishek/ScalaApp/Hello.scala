@@ -11,27 +11,28 @@ class Point(val xc: Int, val yc: Int) {
     println("Point y location : " + y);
   }
 
-  var factor: Int = 3
-  val multiplier = (i: Int) => i * factor
-
 }
 
 class Demo {
   var myArray = Array(1, 2, 3)
   var total = 0
+  var factor: Int = 3
+  
+  val multiplier = (i: Int) => i * factor
+
   def printArray(): Unit = {
     for (i <- myArray) {
       println("Element " + i)
     }
   }
-  
+
   def sumArray(): Int = {
     for (i <- myArray) {
       total += i
     }
     total
   }
-  
+
 }
 
 object Hello {
@@ -43,11 +44,9 @@ object Hello {
     // Move to a new location
     pt.move(5, 9)
 
-    val mulValue: Int = pt.multiplier(8);
-    println("Result of multiplication is " + mulValue)
-    
     val demo = new Demo();
     demo.printArray();
     println("Sum of array is " + demo.sumArray())
+    println("Result of multiplication is " +  demo.multiplier(8))
   }
 }
