@@ -13,6 +13,8 @@ class Point(val xc: Int, val yc: Int) extends Equal {
   
 }
 
+case class Person(name: String, age: Int)
+
 class Demo {
   var myArray = Array(1, 2, 3)
   var total = 0
@@ -37,6 +39,19 @@ class Demo {
   def sumOfTuple(): Int = {
     tuple._1 + tuple._2 + tuple._3
   }
+  
+  def matchTest(x: Int): String = x match {
+    case 1 => "one"
+    case 2 => "two"
+    case 3 => "three"
+    case _ => "other"
+  }
+  
+  def matchPerson(person: Person): String = person match {
+    case Person("Alice", 25) => "Hi Alice!"
+    case Person("Bob", 32) => "Hi Bob!"
+    case Person(name, age) => "Hi "+ name 
+  }
 
 }
 
@@ -57,11 +72,24 @@ object Hello {
     println("Sum of array is " + demo.sumArray())
     println("Result of multiplication is " +  demo.multiplier(8))
     println("Sum of tuple is " +  demo.sumOfTuple())
+        
+    //Pattern matching example
+    println("Patten match " + demo.matchTest(3))
+    
+    //Pattern match with case class
+    val aclice  = new Person("Alice", 25)
+    val bob = new Person("Bob", 27)
+    val charlie = new Person("Charlie", 30)
+    
+    for(person <- List(aclice, bob, charlie)){
+      println("Pattern match for "+ person.name + " " + demo.matchPerson(person))
+    }
     
     //Collection examples
     val collectionExample = new CollectionExample();
     collectionExample.listOperations();
     collectionExample.setOperations();
     collectionExample.mapOperations();
+
   }
 }

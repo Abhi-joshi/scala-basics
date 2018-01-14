@@ -33,4 +33,15 @@ class HelloSpec extends FlatSpec with Matchers {
     val isEqual: Boolean = pt.isEqual(pt)
     isEqual shouldEqual (true)
   }
+  "Pattern match for 3" should "return three" in {
+    val demo = new Demo()
+    val result = demo.matchTest(3)
+    result shouldEqual ("three")
+  }
+  "Pattern match for Alice" should "return Hi Alice!" in {
+    val demo = new Demo()
+    val alice = new Person("Alice", 25)
+    val result = demo.matchPerson(alice)
+    result shouldEqual ("Hi Alice!")
+  }
 }
