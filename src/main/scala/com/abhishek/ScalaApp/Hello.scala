@@ -1,5 +1,7 @@
 package com.abhishek.ScalaApp
 
+import scala.util.matching.Regex
+
 class Point(val xc: Int, val yc: Int) extends Equal {
   var x: Int = xc
   var y: Int = yc
@@ -52,6 +54,11 @@ class Demo {
     case Person("Bob", 32) => "Hi Bob!"
     case Person(name, age) => "Hi "+ name 
   }
+  
+  def testRegex(str: String): String = {
+    val pattern = new Regex("(S|s)cala")
+    (pattern findAllIn str).mkString(",")
+  }
 
 }
 
@@ -84,6 +91,9 @@ object Hello {
     for(person <- List(aclice, bob, charlie)){
       println("Pattern match for "+ person.name + " " + demo.matchPerson(person))
     }
+    
+    //Regular expression
+    println("Regular expression "+demo.testRegex("Scala is scalable and cool"));
     
     //Collection examples
     val collectionExample = new CollectionExample();

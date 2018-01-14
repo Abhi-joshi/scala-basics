@@ -44,4 +44,9 @@ class HelloSpec extends FlatSpec with Matchers {
     val result = demo.matchPerson(alice)
     result shouldEqual ("Hi Alice!")
   }
+  "Regular expression for >>>Scala is scalable and cool<<<" should "return Scala,scala" in {
+    val demo = new Demo()
+    val result = demo.testRegex("Scala is scalable and cool")
+    result shouldEqual ("Scala,scala")
+  }
 }
