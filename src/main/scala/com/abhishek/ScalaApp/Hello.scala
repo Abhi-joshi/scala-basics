@@ -100,6 +100,13 @@ object Hello {
     collectionExample.listOperations();
     collectionExample.setOperations();
     collectionExample.mapOperations();
+    
+    
+    def multiply(implicit by: Int) = 5 * by
+    
+    implicit val multiplier = 2;
+    
+    println(multiply)
 
   }
 }
